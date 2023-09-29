@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import 'react-toastify/dist/ReactToastify.css';
 import Home from '../Home/Home'
 import Main from '../Main/Main'
 import Notfound from '../Notfound/Notfound'

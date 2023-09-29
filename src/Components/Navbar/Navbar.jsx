@@ -2,8 +2,7 @@
 import React from 'react'
 import './Navbar.css'
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Input, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar, NavbarMenu, NavbarMenuItem, useDisclosure, Modal, NavbarMenuToggle, Progress, useSwitch, VisuallyHidden } from "@nextui-org/react";
-import { Switch } from "@nextui-org/react";
-import { useTheme } from "next-themes";
+
 
 export default function NavbarComponent() {
 
@@ -24,19 +23,33 @@ export default function NavbarComponent() {
     <Navbar
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className={`${!navScrollMode?'bg-transparent backdrop-filter-none backdrop-blur-none':'bg-inherit backdrop-filter'}  transition-background duration-1000`}
+      className={`bg-transparent backdrop-filter-none backdrop-blur-none transition-background duration-1000`}
     >
-      <NavbarContent className="sm:hidden" justify="start">
-        <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
-      </NavbarContent>
-      <NavbarContent justify="start">
+      <NavbarContent>
+       
         <NavbarBrand>
-          @ahmed
+          <p className="font-bold text-inherit">ACME</p>
         </NavbarBrand>
-      </NavbarContent> 
-      <NavbarContent className="items-center" justify="end">
-
       </NavbarContent>
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        <NavbarItem><Link color="foreground" href="https://www.lyconet.com/ie/mediabox">World map</Link></NavbarItem>
+        <NavbarItem><Link href="#whatis@ahmed" aria-current="page">what is @ahmed</Link></NavbarItem>
+        <NavbarItem><Link color="foreground" href="#howitworks">how it works</Link></NavbarItem>
+        <NavbarItem><Link color="foreground" href="#customizable">customizable</Link></NavbarItem>
+        <NavbarItem><Link color="foreground" href="#business">business information</Link></NavbarItem>
+        <NavbarItem><Link color="foreground" href="#video">video</Link></NavbarItem>
+      </NavbarContent>
+
+      <NavbarContent justify="end">
+        <NavbarItem className="hidden lg:flex">
+          <Link href="#">Login</Link>
+        </NavbarItem>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden"
+        />
+      </NavbarContent>
+   
 
       <NavbarMenu>
         {menuItems.map((item, index) => (
