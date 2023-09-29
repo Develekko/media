@@ -1,0 +1,15 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+*
+{
+  box-sizing: border-box;
+}
+::selection:not([type='input'])
+{
+  background-color: transparent!important;
+}
+html {
+  overflow-x: hidden !important;
+  scroll-behavior: smooth;
+}
