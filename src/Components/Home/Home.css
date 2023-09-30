@@ -33,7 +33,7 @@
   }
   }
 #whatis{
-    background-image: linear-gradient(180deg, black 40%, rgba(0, 0, 0, 0) 100%),url('../../assets/mediabox-background.jpg');
+    background-image: linear-gradient(180deg, black 40%, rgba(0, 0, 0, 0) 100%),url('../../assets/images/mediabox-background.jpg');
     background-position: bottom;
     background-size: cover;
     box-shadow: 0px -30px 60px 60px #000

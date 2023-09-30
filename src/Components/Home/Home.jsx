@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 import "./Home.css";
-import BoxShot from '../../assets/Box_Shot_04.png'
-import DotBig from '../../assets/dot-big.png'
-import DotSmall from '../../assets/dot-small.png'
-import MediaBox from '../../assets/MediaBox_Rot_01_00015.png'
+import BoxShot from '../../assets/images/Box_Shot_04.png'
+import DotBig from '../../assets/images/dot-big.png'
+import DotSmall from '../../assets/images/dot-small.png'
+import MediaBox from '../../assets/images/MediaBox_Rot_01_00015.png'
 import { Image } from '@nextui-org/react';
 import { motion, useTransform, useScroll } from "framer-motion";
 import { Parallax } from "react-scroll-parallax";
