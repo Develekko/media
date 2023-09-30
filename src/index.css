@@ -1,6 +1,7 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Tenor+Sans&display=swap');
 *
 {
   box-sizing: border-box;
@@ -13,45 +14,11 @@ html {
   overflow-x: hidden !important;
   scroll-behavior: smooth;
 }
-.top__video__smalldot {
-  position: absolute;
-  top: -200px;
-  right: -180px
+
+body
+{
+  font-family: 'Roboto', sans-serif;
 }
 
-.top__video__bigdot {
-  position: absolute;
-  top: -70px;
-  right: -300px
-}
-
-
-.top__video {
-  position: relative
-}
-
-
-
-.top__video video {
-  border: 2px solid #cd1719;
-  box-shadow: 0 3px 99px rgba(205,23,25,.7);
-  transform: scale(4)
-}
-
-.top__video video.loaded {
-  animation: videoScale 2s normal forwards ease-in-out;
-  -webkit-animation: videoScale 2s normal forwards ease-in-out;
-}
-
-
-@keyframes videoScale {
-  0% {
-      transform: scale(4)
-  }
-
-  100% {
-      transform: scale(1)
-  }
-}
 
 
