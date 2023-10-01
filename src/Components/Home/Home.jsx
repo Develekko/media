@@ -28,7 +28,7 @@ export default function Home() {
           <p className='text-large text-zinc-400'>A smart way to earn rewards for every advertisement you see while watching TV, your favourite film, TV show or while playing a videogame.</p>
         </div>
       </AnimationOnScroll>
-      <div className="relative text-center md:w-2/3 mx-auto md:px-10 w-5/6 mt-5">
+      <div className="relative text-center md:w-2/3 mx-auto md:px-10 w-5/6 mt-5 max-w-max">
         <img loading="lazy" className="absolute top-0 right-14 translate-x-full -translate-y-28" src={DotSmall} alt="dot" />
         <img loading="lazy" className="absolute top-0 right-0 translate-x-full translate-y-10" src={DotBig} alt="dot" />
         <video width="100%" height="auto" muted autoPlay playsInline preload='none'
@@ -37,7 +37,7 @@ export default function Home() {
         </video>
       </div>
       <div className="text-center -z-10">
-        <Image loading="lazy" src={BoxShot} alt="MediaBox" className='w-2/3 mx-auto' />
+        <Image loading="lazy" src={BoxShot} alt="MediaBox" className='w-2/3 mx-auto' classNames={{wrapper:"mx-auto"}}/>
       </div>
     </motion.section>
     <div className="overlay w-full hero-shadow"></div>
