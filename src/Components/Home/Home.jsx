@@ -5,11 +5,10 @@ import BoxShot from '../../assets/images/Box_Shot_04.png'
 import DotBig from '../../assets/images/dot-big.png'
 import DotSmall from '../../assets/images/dot-small.png'
 import MediaBox from '../../assets/images/MediaBox_Rot_01_00015.png'
-import { Image } from '@nextui-org/react';
+import { Image , Tabs, Tab, Card, CardBody} from '@nextui-org/react';
 import { motion, useTransform, useScroll } from "framer-motion";
 import { Parallax } from "react-scroll-parallax";
 import { AnimationOnScroll } from 'react-animation-on-scroll';
-
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -45,7 +44,7 @@ export default function Home() {
 
 
 
-    <motion.section id='whatis' className='bg-black py-36'>
+    <motion.section id='whatis' className='bg-black py-32'>
       <div className='container m-auto px-10'>
         <div className='grid grid-cols-12'>
           <div className='col-span-12 sm:col-span-6 md:col-span-6'>
@@ -75,6 +74,47 @@ export default function Home() {
     </motion.section>
 
 
+  <section id="howitworks" className='py-36 bg-white text-black'>
+    <div className='container m-auto px-10 text-center'>
+      <p className="uppercase text-red-600 text-sm tracking-wider mb-3">How it works</p>
+      <h2 className='text-5xl font-medium'>Connect, watch & get paid</h2>
+
+      <div className="flex w-full flex-col py-10">
+      <Tabs aria-label="Options" variant="underlined"
+      size='lg'
+       color='default'
+        classNames={{
+          base: "mx-auto outline-none",
+          tabList: "gap-0 p-5 outline-none",
+          tab: "outline-none",
+          cursor: "bg-black w-full",
+          tabContent: "group-data-[selected=true]:text-[#000] text-black text-sm"
+        }}>
+        <Tab key="Plug and Play" title="Plug and play">
+          <Card className='text-black bg-white'>
+            <CardBody>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </CardBody>
+          </Card>  
+        </Tab>
+        <Tab key="Choose your provider" title="Choose your provider">
+          <Card className='text-black bg-white'>
+            <CardBody>
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </CardBody>
+          </Card>  
+        </Tab>
+        <Tab key="Get Cashback" title="Get Cashback">
+          <Card className='text-black bg-white'>
+            <CardBody>
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </CardBody>
+          </Card>  
+        </Tab>
+      </Tabs>
+    </div>  
+    </div>
+  </section>
 
 
 
