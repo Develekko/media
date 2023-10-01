@@ -5,18 +5,17 @@ import BoxShot from '../../assets/images/Box_Shot_04.png'
 import DotBig from '../../assets/images/dot-big.png'
 import DotSmall from '../../assets/images/dot-small.png'
 import MediaBox from '../../assets/images/MediaBox_Rot_01_00015.png'
-import { Image , Tabs, Tab, Card, CardBody} from '@nextui-org/react';
+import { Image , Tabs , Tab} from '@nextui-org/react';
 import { motion, useTransform, useScroll } from "framer-motion";
 import { Parallax } from "react-scroll-parallax";
 import { AnimationOnScroll } from 'react-animation-on-scroll';
+import { HowToWorkItems } from './HowToWork.jsx';
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
   const HeroOpacitySection = useTransform(scrollYProgress, [0, 1], [1, 0]);
-  // const HeroTranslateYSection = useTransform(scrollYProgress, [0, 1], [0, -100]);
-  // const HeroScaleSection = useTransform(scrollYProgress, [1, 4], [4, 1]);
 
-
+  const [selected, setSelected] = React.useState("Plug and play");
   return <>
     <motion.section
       style={{ opacity: HeroOpacitySection }} id='hero' className='flex fixed flex-col justify-start w-full text-center h-screen gap-5 -z-10 pt-5 min-h-screen '>
@@ -36,7 +35,7 @@ export default function Home() {
         </video>
       </div>
       <div className="text-center -z-10">
-        <Image loading="lazy" src={BoxShot} alt="MediaBox" className='w-2/3 mx-auto' classNames={{wrapper:"mx-auto"}}/>
+        <Image loading="lazy" src={BoxShot} alt="MediaBox" className='w-2/3 mx-auto' classNames={{ wrapper: "mx-auto" }} />
       </div>
     </motion.section>
     <div className="overlay w-full hero-shadow"></div>
@@ -61,7 +60,7 @@ export default function Home() {
 
         </div>
         <Parallax rotateX={[100, -90]} >
-          <Image loading="lazy" src={MediaBox} alt="MediaBox" className='mx-auto w-4/5' classNames={{wrapper:"mx-auto"}}/>
+          <Image loading="lazy" src={MediaBox} alt="MediaBox" className='mx-auto w-4/5' classNames={{ wrapper: "mx-auto" }} />
         </Parallax>
         <div className='col-span-12'>
           <AnimationOnScroll animateIn="animate__fadeInUp" animateOut='animate__fadeOutUp'>
@@ -74,47 +73,86 @@ export default function Home() {
     </motion.section>
 
 
-  <section id="howitworks" className='py-36 bg-white text-black'>
-    <div className='container m-auto px-10 text-center'>
-      <p className="uppercase text-red-600 text-sm tracking-wider mb-3">How it works</p>
-      <h2 className='text-5xl font-medium'>Connect, watch & get paid</h2>
+    <section id="howitworks" style={{ backgroundColor: '#F4F4F4' }} className='py-36 text-black'>
+      <div className='container m-auto px-10 text-center'>
+        <p className="uppercase text-red-600 text-sm tracking-wider mb-3">How it works</p>
+        <h2 className='text-5xl font-medium'>Connect, watch & get paid</h2>
 
-      <div className="flex w-full flex-col py-10">
-      <Tabs aria-label="Options" variant="underlined"
-      size='lg'
-       color='default'
+        <div className="flex w-full flex-col mt-5">
+      <Tabs 
+        aria-label="howitworksTabs"    
+        variant='underlined'
+        color='default'
+        className='mx-auto text-black'
         classNames={{
-          base: "mx-auto outline-none",
-          tabList: "gap-0 p-5 outline-none",
-          tab: "outline-none",
-          cursor: "bg-black w-full",
-          tabContent: "group-data-[selected=true]:text-[#000] text-black text-sm"
-        }}>
-        <Tab key="Plug and Play" title="Plug and play">
-          <Card className='text-black bg-white'>
-            <CardBody>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </CardBody>
-          </Card>  
-        </Tab>
-        <Tab key="Choose your provider" title="Choose your provider">
-          <Card className='text-black bg-white'>
-            <CardBody>
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </CardBody>
-          </Card>  
-        </Tab>
-        <Tab key="Get Cashback" title="Get Cashback">
-          <Card className='text-black bg-white'>
-            <CardBody>
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </CardBody>
-          </Card>  
-        </Tab>
+          base:'text-black',
+          cursor: "w-full bg-[#000]",
+          tabContent: "group-data-[selected=true]:text-[#000]"
+          }}     
+        selectedKey={selected}
+        onClick={(e)=>{setSelected((e.target.outerText))}}
+        onSelectionChange={setSelected}
+      >
+      {HowToWorkItems.map((item) => {
+          return (
+            <Tab key={item.label} title={item.label}>
+            <div className='grid grid-cols-12 py-10 relative'>
+                <div className="col-span-12 sm:col-span-6 md:col-span-6 text-left flex flex-col justify-center">
+                    <AnimationOnScroll animateIn="animate__fadeInLeft" animateOut='animate__fadeOutLeft'>
+                        <h4 className='text-2xl font-medium text-black'>{item.heading}</h4>
+                        <p className='md:w-2/3 text-base text-zinc-400 my-5'>{item.desc}</p>
+                    </AnimationOnScroll>
+                </div>
+                <div className="col-span-12 sm:col-span-6 md:col-span-6">
+                    <AnimationOnScroll animateIn="animate__fadeInRight" animateOut='animate__fadeOutRight'>
+                        <video width="100%" height="auto" muted loop autoPlay playsInline preload='none'
+                            poster="anyimage.jpg" className="bg-black">
+                            <source data-src={item.url} type="video/mp4" src={item.url} />
+                        </video>
+                        <div class="howitworks__video__image absolute w-full">
+                        <div className="relative howitworks__video__image">
+                            <img loading="lazy" className="mx-auto" width={280} src="https://atmedia.digital/wp-content/themes/mediaworld/assets/images/Box_Shot_03-small.png" alt="@ ahmed box - TV Entertainment and Advertising" />
+                        </div>
+                    </div>
+                    </AnimationOnScroll>
+                </div>
+                <div className="absolute w-full top-0 h-full"></div>
+            </div>
+            </Tab>
+          );
+        })}
       </Tabs>
     </div>  
-    </div>
-  </section>
+
+        {/* <ConfigProvider
+          theme={{
+            token: {
+              colorPrimary: 'rgb(51, 51, 51)',
+              fontFamily: `'Roboto', sans-serif!important`,
+            },
+            components: {
+              Tabs: {
+                "inkBarColor": "#000",
+                "itemColor":"rgb(51, 51, 51)"
+              },
+            },
+          }}
+        >
+          <Tabs
+            className='max-w-max mx-auto mt-10'
+            style={{
+          backgroundColor: '#09c',
+        }}
+            defaultActiveKey="1"
+            items={HowToWorkItems}
+            centered
+            size='large'
+          />
+        </ConfigProvider>
+ */}
+
+      </div>
+    </section>
 
 
 
@@ -122,14 +160,7 @@ export default function Home() {
 
 
 
-
-
-
-
-
-
-
-
+   
 
 
 
