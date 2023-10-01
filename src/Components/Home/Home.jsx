@@ -109,11 +109,11 @@ export default function Home() {
                             poster="anyimage.jpg" className="bg-black">
                             <source data-src={item.url} type="video/mp4" src={item.url} />
                         </video>
-                        <div class="howitworks__video__image absolute w-full">
+                       {item.label!=='Plug and play'&& <div class="howitworks__video__image absolute w-full">
                         <div className="relative howitworks__video__image">
                             <img loading="lazy" className="mx-auto" width={280} src="https://atmedia.digital/wp-content/themes/mediaworld/assets/images/Box_Shot_03-small.png" alt="@ ahmed box - TV Entertainment and Advertising" />
                         </div>
-                    </div>
+                    </div>}
                     </AnimationOnScroll>
                 </div>
                 <div className="absolute w-full top-0 h-full"></div>
