@@ -5,7 +5,8 @@
 /.pnp
 .pnp.js
 .env
-/src/assets/videos
+src/assets/videos
+src/assets/images
 
 elafsystem.bat
 # testing
