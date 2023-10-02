@@ -61,3 +61,42 @@
     background-size: cover;
     box-shadow: 0px -30px 60px 60px #000
 }
+#buy {
+  background-color: #f4f4f4;
+  background-image: url('https://atmedia.digital/wp-content/themes/mediaworld/assets/images/wave.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%
+}
+
+.buy__video video {
+  border: 2px solid #cd1719;
+  box-shadow: 0 3px 20px rgba(205,23,25,.6);
+  /* transform: scale(2.5); */
+  /* opacity: 0; */
+}
+.test
+{
+  animation: videoScale2 1s normal forwards ease-in-out;
+  -webkit-animation: videoScale2 1s normal forwards ease-in-out;
+}
+@keyframes videoScale2 {
+  0% {
+      transform: scale(2.5)  ;
+      -webkit-transform: scale(2.5)  ;
+      -moz-transform: scale(2.5)  ;
+      -ms-transform: scale(2.5)  ;
+      -o-transform: scale(2.5)  ;
+      opacity: 0;
+}
+
+  100% {
+      transform: scale(1)  ;
+      -webkit-transform: scale(1)  ;
+      -moz-transform: scale(1)  ;
+      -ms-transform: scale(1)  ;
+      -o-transform: scale(1)  ;
+      opacity: 1;
+}
+}
