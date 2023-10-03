@@ -15,11 +15,20 @@ import { HowToWorkItems } from './HowToWork.jsx';
 export default function Home() {
   const { scrollYProgress } = useScroll();
   const HeroOpacitySection = useTransform(scrollYProgress, [0, 1], [1, 0]);
-
   const [selected, setSelected] = React.useState("Plug and play");
+  const [videoIntroLoaded, setVideoIntroLoaded] = React.useState(false);
+
+  //   React.useEffect(() => {
+  //     if (videoIntroLoaded) {
+  //       // Your JSX code goes here
+  //       console.log('Video URL is ready and loaded');
+  //     }
+  //  }, [videoIntroLoaded]);
+
   return <>
     <motion.section
-      style={{ opacity: HeroOpacitySection }} id='hero' className='flex fixed flex-col justify-start w-full text-center h-screen gap-5 -z-10 pt-5 min-h-screen '>
+      style={{ opacity: HeroOpacitySection }} id='hero'
+      className={videoIntroLoaded ? 'flex fixed flex-col justify-start w-full text-center h-screen gap-5 -z-10 pt-5 min-h-screen' : 'opacity-0'}>
 
       <AnimationOnScroll animateIn="animate__fadeIn" animateOut='animate__fadeOut'>
         <div className="text-center flex flex-col items-center gap-7 justify-center md:w-2/3 mx-auto">
@@ -31,7 +40,8 @@ export default function Home() {
         <img loading="lazy" className="absolute top-0 right-14 translate-x-full -translate-y-28" src={DotSmall} alt="dot" />
         <img loading="lazy" className="absolute top-0 right-0 translate-x-full translate-y-10" src={DotBig} alt="dot" />
         <video width="100%" height="auto" muted autoPlay playsInline preload='none'
-          poster="anyimage.jpg" className="loaded" >
+          poster="anyimage.jpg" className={videoIntroLoaded ? 'loaded' : 'opacity-0'}
+          onLoadedData={() => setVideoIntroLoaded(true)} >
           <source src="https://res.cloudinary.com/dhlpnm4rn/video/upload/v1696098491/01_WEBSITE_INTRO_r2fzqf.mp4" type="video/mp4" />
         </video>
       </div>
@@ -130,64 +140,51 @@ export default function Home() {
 
     <motion.section id="buy" style={{ backgroundColor: '#F4F4F4' }}>
       <div className='container m-auto py-20 px-0 sm:px-10 text-center'>
-        <motion.div  className="buy__video text-center">
+        <motion.div className="buy__video text-center">
           <div className="relative text-center md:w-2/3 mx-auto md:px-10 w-5/6 max-w-max">
+            <Parallax scale={[1.5,1]} opacity={[0.7,1]}>
             <video width="100%" height="auto" muted loop autoPlay playsInline>
               <source data-src="https://res.cloudinary.com/dhlpnm4rn/video/upload/v1696252152/03_WEBSITE_SPLITSCREEN_oalnsd.mp4" type="video/mp4" src="https://res.cloudinary.com/dhlpnm4rn/video/upload/v1696252152/03_WEBSITE_SPLITSCREEN_oalnsd.mp4" />
             </video>
+            </Parallax>
 
-
-
-
-
-              <div className="flex py-10 relative">
-                    <div className="sm:w-1/2 text-left">
-                      <h2 className="text-5xl text-black mb-3"><p>Buy your product<br />with <strong className="text-red-700 font-normal">one click.</strong></p></h2>
-                      <p className="text-base text-zinc-500">If you're interested in the ad shown simply switch to split screen mode. In case, you would like to buy a product from the advert you see, simply press PURCHASE button on your remote control and press it again to confirm your purchase decision.</p>
-                    </div>
-                    <div className="sm:w-1/2 absolute md:relative text-right w-1/3 right-0">
-                    <img loading="lazy" className="absolute right-0 -translate-y-1/2" src="https://atmedia.digital/wp-content/themes/mediaworld/assets/images/remote.png" alt="@ahmed box remote control" />
-                    </div>
+            <div className="grid grid-cols-12 py-10 sm:py-20 relative">
+              <div className="col-span-12 sm:col-span-6 md:col-span-6 text-left">
+                <AnimationOnScroll animateIn="animate__fadeInUp" animateOut='animate__fadeOutDown'>
+                  <h2 className="text-3xl sm:text-5xl text-black mb-3"><p>Buy your product<br />with <strong className="text-red-700 font-normal">one click.</strong></p></h2>
+                </AnimationOnScroll>
+                <AnimationOnScroll delay="500" animateIn="animate__fadeInUp" animateOut='animate__fadeOutDown'>
+                  <p className="text-base text-zinc-500 ">If you're interested in the ad shown simply switch to split screen mode. In case, you would like to buy a product from the advert you see, simply press PURCHASE button on your remote control and press it again to confirm your purchase decision.</p>
+                </AnimationOnScroll>
               </div>
-            </div>
 
-        </motion.div>
-      </div>
-
-
-
-      <div id="buy" class="section buy hidden">
-        <div class="container">
-          <div class=" justify-center grid grid-cols-12">
-            <div class="col-span-12 lg:col-span-8 md:col-span-10">
-              <div class="buy__video text-center">
-                <video width="100%" height="auto" muted loop autoPlay playsInline class=""
-                  style={{ opacity: 1, visibility: 'inherit', transform: 'translate(0px, 0px)' }}>
-                  <source data-src="https://atmedia.digital/wp-content/uploads/2021/11/03_WEBSITE_SPLITSCREEN.mp4" type="video/mp4" src="https://atmedia.digital/wp-content/uploads/2021/11/03_WEBSITE_SPLITSCREEN.mp4" />
-                </video>
+              <div className="col-span-6 sm:col-span-6 md:col-span-6  absolute right-0 top-[10%]">
+                <AnimationOnScroll animateIn="animate__fadeInUp" animateOut='animate__fadeOutDown'>
+              <div className="flex justify-end">
+              <img loading="lazy" className="-translate-y-[50%]  text-right sm:w-full w-1/3" src="https://atmedia.digital/wp-content/themes/mediaworld/assets/images/remote.png" alt="@ahmed box remote control" />
               </div>
-              <div class="flex">
-                <div class="col-lg-7 col-md-8 col-12 order-2 order-md-1">
-                  <div class="buy__title">
-                    <h2 class="text_animation"><p>Buy your product<br />
-                      with <strong>one click.</strong></p>
-                    </h2>
-                    <div class="buy__text text_animation">If you're interested in the ad shown simply switch to split screen mode. In case, you would like to buy a product from the advert you see, simply press PURCHASE button on your remote control and press it again to confirm your purchase decision.</div>
-                  </div>
-                </div>
-                <div class="col-lg-5 col-md-4 col-12 order-1 order-md-2">
-                  <div class="buy__remote text_animation show">
-                    <img loading="lazy" src="https://atmedia.digital/wp-content/themes/mediaworld/assets/images/remote.png" alt="@media box remote control" />
-                  </div>
-                </div>
+                </AnimationOnScroll>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </motion.section>
 
 
+    <motion.section id="customizable" style={{ backgroundColor: '#fff' }}>
+    <div className='container m-auto py-20 px-5 md:px-32 text-center'>
+    <div className="grid grid-cols-12 py-10 sm:py-20 ">
+            <div className="col-span-12 md:col-span-8 text-left">
+              <p className="uppercase text-zinc-400 text-sm mb-5">CUSTOMIZABLE</p>
+              <h2 className="text-black text-3xl md:text-5xl">You can set up all ads completely according to your wishes.</h2>
+              <video width="100%" height="auto" muted loop autoPlay playsInline className="my-10">
+              <source data-src="https://res.cloudinary.com/dhlpnm4rn/video/upload/v1696345553/04_WEBSITE_CONFIG_AD_lqgrl1.mp4" type="video/mp4" src="https://res.cloudinary.com/dhlpnm4rn/video/upload/v1696345553/04_WEBSITE_CONFIG_AD_lqgrl1.mp4" />
+            </video>
+            </div>
+    </div>
+    </div>
+    </motion.section>
 
 
 

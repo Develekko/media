@@ -13,7 +13,7 @@ export default function NavbarComponent() {
   const menuItems = [
     { name: "World map", url: "https://www.lyconet.com/ie/mediabox" },
     { name: "what is @ahmed", url: "#whatis" },
-    { name: "how it works", url: "#" },
+    { name: "how it works", url: "#howitworks" },
     { name: "customizable", url: "#" },
     { name: "business information", url: "#" },
     { name: "video", url: "#" },
