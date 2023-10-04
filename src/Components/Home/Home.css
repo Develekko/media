@@ -76,6 +76,27 @@
   /* transform: scale(2.5); */
   /* opacity: 0; */
 }
+#customizable video {
+  border: 2px solid #cd1719;
+  box-shadow: 0 4px 56px rgba(205,23,25,.3);
+}
+#customizable .swiper-pagination
+{
+  position: unset;
+  margin-top: 40px;
+  text-align:left;
+}
+#customizable .swiper-pagination-bullet-active{
+  width: 36px;
+}
+#customizable .swiper-pagination-bullet{
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  background-color: #cd1719;
+}
 .test
 {
   animation: videoScale2 1s normal forwards ease-in-out;

@@ -5,25 +5,22 @@ import BoxShot from '../../assets/images/Box_Shot_04.png'
 import DotBig from '../../assets/images/dot-big.png'
 import DotSmall from '../../assets/images/dot-small.png'
 import MediaBox from '../../assets/images/MediaBox_Rot_01_00015.png'
+import HeroIntroVideo from '../../assets/videos/01_WEBSITE_INTRO.mp4'
 import { Image, Tabs, Tab } from '@nextui-org/react';
 import { motion, useTransform, useScroll } from "framer-motion";
 import { Parallax } from "react-scroll-parallax";
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import { HowToWorkItems } from './HowToWork.jsx';
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectFade, Keyboard, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/bundle'
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
   const HeroOpacitySection = useTransform(scrollYProgress, [0, 1], [1, 0]);
   const [selected, setSelected] = React.useState("Plug and play");
   const [videoIntroLoaded, setVideoIntroLoaded] = React.useState(false);
-
-  //   React.useEffect(() => {
-  //     if (videoIntroLoaded) {
-  //       // Your JSX code goes here
-  //       console.log('Video URL is ready and loaded');
-  //     }
-  //  }, [videoIntroLoaded]);
 
   return <>
     <motion.section
@@ -42,11 +39,12 @@ export default function Home() {
         <video width="100%" height="auto" muted autoPlay playsInline preload='none'
           poster="anyimage.jpg" className={videoIntroLoaded ? 'loaded' : 'opacity-0'}
           onLoadedData={() => setVideoIntroLoaded(true)} >
-          <source src="https://res.cloudinary.com/dhlpnm4rn/video/upload/v1696098491/01_WEBSITE_INTRO_r2fzqf.mp4" type="video/mp4" />
+          {/* <source src="https://res.cloudinary.com/dhlpnm4rn/video/upload/v1696098491/01_WEBSITE_INTRO_r2fzqf.mp4" type="video/mp4" /> */}
+          <source src={HeroIntroVideo} type="video/mp4" />
         </video>
       </div>
       <div className="text-center -z-10">
-        <Image loading="lazy" src={BoxShot} alt="MediaBox" className='w-2/3 mx-auto' classNames={{ wrapper: "mx-auto" }} />
+        <img loading="lazy" src={BoxShot} alt="MediaBox" className='w-2/3 mx-auto' />
       </div>
     </motion.section>
     <div className="overlay w-full hero-shadow"></div>
@@ -142,10 +140,10 @@ export default function Home() {
       <div className='container m-auto py-20 px-0 sm:px-10 text-center'>
         <motion.div className="buy__video text-center">
           <div className="relative text-center md:w-2/3 mx-auto md:px-10 w-5/6 max-w-max">
-            <Parallax scale={[1.5,1]} opacity={[0.7,1]}>
-            <video width="100%" height="auto" muted loop autoPlay playsInline>
-              <source data-src="https://res.cloudinary.com/dhlpnm4rn/video/upload/v1696252152/03_WEBSITE_SPLITSCREEN_oalnsd.mp4" type="video/mp4" src="https://res.cloudinary.com/dhlpnm4rn/video/upload/v1696252152/03_WEBSITE_SPLITSCREEN_oalnsd.mp4" />
-            </video>
+            <Parallax scale={[1.5, 1]} opacity={[0.7, 1]}>
+              <video width="100%" height="auto" muted loop autoPlay playsInline>
+                <source data-src="https://res.cloudinary.com/dhlpnm4rn/video/upload/v1696252152/03_WEBSITE_SPLITSCREEN_oalnsd.mp4" type="video/mp4" src="https://res.cloudinary.com/dhlpnm4rn/video/upload/v1696252152/03_WEBSITE_SPLITSCREEN_oalnsd.mp4" />
+              </video>
             </Parallax>
 
             <div className="grid grid-cols-12 py-10 sm:py-20 relative">
@@ -160,9 +158,9 @@ export default function Home() {
 
               <div className="col-span-6 sm:col-span-6 md:col-span-6  absolute right-0 top-[10%]">
                 <AnimationOnScroll animateIn="animate__fadeInUp" animateOut='animate__fadeOutDown'>
-              <div className="flex justify-end">
-              <img loading="lazy" className="-translate-y-[50%]  text-right sm:w-full w-1/3" src="https://atmedia.digital/wp-content/themes/mediaworld/assets/images/remote.png" alt="@ahmed box remote control" />
-              </div>
+                  <div className="flex justify-end">
+                    <img loading="lazy" className="-translate-y-[50%]  text-right sm:w-full w-1/3" src="https://atmedia.digital/wp-content/themes/mediaworld/assets/images/remote.png" alt="@ahmed box remote control" />
+                  </div>
                 </AnimationOnScroll>
               </div>
             </div>
@@ -173,17 +171,45 @@ export default function Home() {
 
 
     <motion.section id="customizable" style={{ backgroundColor: '#fff' }}>
-    <div className='container m-auto py-20 px-5 md:px-32 text-center'>
-    <div className="grid grid-cols-12 py-10 sm:py-20 ">
-            <div className="col-span-12 md:col-span-8 text-left">
+      <div className='container m-auto py-20 px-5 md:px-32 text-center'>
+        <div className="grid grid-cols-12">
+          <div className="col-span-12 md:col-span-8 text-left z-0">
+            <AnimationOnScroll animateIn="animate__fadeInUp" animateOut='animate__fadeOutDown'>
               <p className="uppercase text-zinc-400 text-sm mb-5">CUSTOMIZABLE</p>
               <h2 className="text-black text-3xl md:text-5xl">You can set up all ads completely according to your wishes.</h2>
-              <video width="100%" height="auto" muted loop autoPlay playsInline className="my-10">
+            </AnimationOnScroll>
+          </div>
+        </div>
+        <div className="grid grid-cols-12 ">
+          <div className="col-span-12 md:col-span-8 z-10">
+            <video width="100%" height="auto" muted loop autoPlay playsInline className="my-10">
               <source data-src="https://res.cloudinary.com/dhlpnm4rn/video/upload/v1696345553/04_WEBSITE_CONFIG_AD_lqgrl1.mp4" type="video/mp4" src="https://res.cloudinary.com/dhlpnm4rn/video/upload/v1696345553/04_WEBSITE_CONFIG_AD_lqgrl1.mp4" />
             </video>
-            </div>
-    </div>
-    </div>
+          </div>
+          <div className="md:col-span-1"></div>
+          <div className="col-span-12 md:col-span-3 flex items-center">
+            <Swiper
+              spaceBetween={30}
+              effect={'fade'}
+              pagination={{
+                clickable: true,
+                bulletClass:"opacity-100 swiper-pagination-bullet w-4 h-4 rounded-lg",
+              }}
+              modules={[EffectFade, Keyboard, Pagination]}
+              className="mySwiper"
+            >
+              {[...Array(3)].map((_,index) => {
+                return <SwiperSlide key={index}>
+                  <div className="text-left bg-white">
+                    <h4 className="text-black text-2xl mb-5">You are in charge</h4>
+                    <p className="text-zinc-500 text-base font-normal">Set up your ad preferences by choosing your interests and how often you would like to see the adverts. @ahmed box will match the perfect ads for your needs!</p>
+                  </div>
+                </SwiperSlide>
+              })}
+            </Swiper>
+          </div>
+        </div>
+      </div>
     </motion.section>
 
 
