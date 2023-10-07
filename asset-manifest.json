@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Develekko/media/static/css/main.4dfdc5fd.css",
-    "main.js": "/Develekko/media/static/js/main.fb246891.js",
+    "main.css": "/Develekko/media/static/css/main.a3821ca6.css",
+    "main.js": "/Develekko/media/static/js/main.ab1f234d.js",
     "static/media/01_WEBSITE_INTRO.mp4": "/Develekko/media/static/media/01_WEBSITE_INTRO.8f95c860a7c62cc26081.mp4",
     "static/media/MediaBox_Rot_01_00015.png": "/Develekko/media/static/media/MediaBox_Rot_01_00015.de0c8273c8e961cf8111.png",
     "static/media/Box_Shot_04.png": "/Develekko/media/static/media/Box_Shot_04.415c4061f4fe8b23cd9e.png",
@@ -16,12 +16,10 @@
     "static/media/dot-small.png": "/Develekko/media/static/media/dot-small.dec8f740a2689e199777.png",
     "static/media/fa-v4compatibility.ttf": "/Develekko/media/static/media/fa-v4compatibility.f601162ae669f88823a3.ttf",
     "static/media/fa-v4compatibility.woff2": "/Develekko/media/static/media/fa-v4compatibility.745989aab0d69cab7e70.woff2",
-    "index.html": "/Develekko/media/index.html",
-    "main.4dfdc5fd.css.map": "/Develekko/media/static/css/main.4dfdc5fd.css.map",
-    "main.fb246891.js.map": "/Develekko/media/static/js/main.fb246891.js.map"
+    "index.html": "/Develekko/media/index.html"
   },
   "entrypoints": [
-    "static/css/main.4dfdc5fd.css",
-    "static/js/main.fb246891.js"
+    "static/css/main.a3821ca6.css",
+    "static/js/main.ab1f234d.js"
   ]
 }
