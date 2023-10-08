@@ -1,0 +1,22 @@
+.howitworks_video {
+  border: 2px solid #cd1719;
+  box-shadow: 0 3px 20px rgba(205, 23, 25, 0.6);
+  background-color: #000;
+}
+.howitworks
+{
+    background-color: #F4F4F4
+}
+.howitworks__video__image:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 65px;
+  width: 35px;
+  top: -8px;
+  background-image: url(//atmedia.digital/wp-content/themes/mediaworld/assets/images/cable.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
