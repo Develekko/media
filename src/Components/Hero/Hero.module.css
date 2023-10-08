@@ -1,0 +1,32 @@
+.hero_video {
+  border: 2px solid #cd1719;
+  box-shadow: 0 3px 99px rgba(205, 23, 25, 0.7);
+  transform: scale(4);
+  -webkit-transform: scale(4);
+  -moz-transform: scale(4);
+  -ms-transform: scale(4);
+  -o-transform: scale(4);
+}
+
+.hero_video__loaded {
+  animation: videoScale 2s normal forwards ease-in-out;
+  -webkit-animation: videoScale 2s normal forwards ease-in-out;
+}
+
+@keyframes videoScale {
+  0% {
+    transform: scale(4);
+    -webkit-transform: scale(4);
+    -moz-transform: scale(4);
+    -ms-transform: scale(4);
+    -o-transform: scale(4);
+  }
+
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+  }
+}

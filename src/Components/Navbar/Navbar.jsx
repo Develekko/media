@@ -1,28 +1,25 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import './Navbar.css'
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Input, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar, NavbarMenu, NavbarMenuItem, useDisclosure, Modal, NavbarMenuToggle, Progress, useSwitch, VisuallyHidden } from "@nextui-org/react";
-import { motion } from 'framer-motion';
-import { AnimationOnScroll } from 'react-animation-on-scroll';
+import styles from './Navbar.module.css'
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from "@nextui-org/react";
+import { Link } from 'react-scroll';
 
 
 export default function NavbarComponent() {
 
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
   const menuItems = [
-    { name: "World map", url: "https://www.lyconet.com/ie/mediabox" },
-    { name: "what is @ahmed", url: "#whatis" },
-    { name: "how it works", url: "#howitworks" },
-    { name: "customizable", url: "#" },
-    { name: "business information", url: "#" },
-    { name: "video", url: "#" },
+    { name: "what is @ahmed", url: "whatis" },
+    { name: "how it works", url: "howitworks" },
+    { name: "customizable", url: "customizable" },
+    { name: "business information", url: "business" },
+    { name: "video", url: "video" },
   ];
 
 
 
   return <>
-        
+
     <Navbar
       maxWidth="xl"
       height="5rem"
@@ -33,16 +30,16 @@ export default function NavbarComponent() {
     >
       <NavbarContent>
         <NavbarBrand>
-          <p className="font-bold text-2xl"><span className='text-red-700'>@ </span>ahmed</p>
+        <Link to="hero" smooth={true} duration={500}><p className="font-bold text-2xl cursor-pointer"><span className='text-red-700'>@ </span>ahmed</p></Link>
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="hidden sm:flex gap-8" justify="end">
-        <NavbarItem><Link color="foreground" href="https://www.lyconet.com/ie/mediabox">World map</Link></NavbarItem>
-        <NavbarItem><Link color="foreground" href="#whatis">what is @ahmed</Link></NavbarItem>
-        <NavbarItem><Link color="foreground" href="#howitworks">how it works</Link></NavbarItem>
-        <NavbarItem><Link color="foreground" href="#customizable">customizable</Link></NavbarItem>
-        <NavbarItem><Link color="foreground" href="#business">business information</Link></NavbarItem>
-        <NavbarItem><Link color="foreground" href="#video">video</Link></NavbarItem>
+        <NavbarItem><Link to="" className="hover:text-red-700 transition-colors" href="https://www.lyconet.com/ie/mediabox">World map</Link></NavbarItem>
+        <NavbarItem className='relative'><Link to="whatis" smooth={true} duration={500} spy={true} activeClass={`${styles.active} text-red-600 font-medium`} className={`${styles.navbar_link} cursor-pointer hover:text-red-700 transition-colors`}>what is @ahmed</Link></NavbarItem>
+        <NavbarItem className='relative'><Link to="howitworks" smooth={true} duration={500} spy={true} activeClass={`${styles.active} text-red-600 font-medium`} className={`${styles.navbar_link} cursor-pointer hover:text-red-700 transition-colors`}>how it works</Link></NavbarItem>
+        <NavbarItem className='relative'><Link to="customizable" smooth={true} duration={500} spy={true} isDynamic={true} activeClass={`${styles.active} text-red-600 font-medium`} className={`${styles.navbar_link} cursor-pointer hover:text-red-700 transition-colors`}>customizable</Link></NavbarItem>
+        <NavbarItem className='relative'><Link to="business" smooth={true} duration={500} spy={true} activeClass={`${styles.active} text-red-600 font-medium`} className={`${styles.navbar_link} cursor-pointer hover:text-red-700 transition-colors`}>business information</Link></NavbarItem>
+        <NavbarItem className='relative'><Link to="video" smooth={true} duration={500} spy={true} activeClass={`${styles.active} text-red-600 font-medium`} className={`${styles.navbar_link} cursor-pointer hover:text-red-700 transition-colors`}>video</Link></NavbarItem>
       </NavbarContent>
 
       <NavbarContent className="sm:hidden" justify="end">
@@ -57,14 +54,12 @@ export default function NavbarComponent() {
         exit={{ x: '-100%' }}
         transition={{ duration: 0.5 }}
       >
-      <p className="text-center my-3">Menu</p>
+        <p className="text-center my-3">Menu</p>
+        <NavbarMenuItem key="World map"><Link to="#" className="w-full" color="foreground" href="https://www.lyconet.com/ie/mediabox" size="lg">World map</Link></NavbarMenuItem>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item.name}-${index}`}>
             <Link
-              className="w-full"
-              color="foreground"
-              href={item.url}
-              size="lg"
+              to={item.url} smooth={true} duration={500} spy={true} activeClass={`${styles.active} text-red-600 font-medium transition-colors`} className={`${styles.navbar_link} cursor-pointer w-full relative`} onClick={()=>{setIsMenuOpen(false)}}
             >
               {item.name}
             </Link>

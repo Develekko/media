@@ -3,103 +3,20 @@
   .overlay{
     height: 90vh;
   }
-  #hero video {
-    border: 2px solid #cd1719;
-    box-shadow: 0 3px 99px rgba(205,23,25,.7);
-    transform: scale(4)  ;
-    -webkit-transform: scale(4);
-    -moz-transform: scale(4);
-    -ms-transform: scale(4);
-    -o-transform: scale(4);
-}
-
-
-  #hero video.loaded {
-    animation: videoScale 2s normal forwards ease-in-out;
-    -webkit-animation: videoScale 2s normal forwards ease-in-out;
+  #customizable .swiper-pagination
+  {
+    position: unset;
+    margin-top: 40px;
+    text-align:left;
   }
-  
-  
-  @keyframes videoScale {
-    0% {
-        transform: scale(4)  ;
-        -webkit-transform: scale(4)  ;
-        -moz-transform: scale(4)  ;
-        -ms-transform: scale(4)  ;
-        -o-transform: scale(4)  ;
+  #customizable .swiper-pagination-bullet-active{
+    width: 36px;
   }
-  
-    100% {
-        transform: scale(1)  ;
-        -webkit-transform: scale(1)  ;
-        -moz-transform: scale(1)  ;
-        -ms-transform: scale(1)  ;
-        -o-transform: scale(1)  ;
+  #customizable .swiper-pagination-bullet{
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    background-color: #cd1719;
   }
-  }
-#whatis{
-    background-image: linear-gradient(180deg, black 40%, rgba(0, 0, 0, 0) 100%),url('../../assets/images/mediabox-background.jpg');
-    background-position: bottom;
-    background-size: cover;
-    box-shadow: 0px -30px 60px 60px #000
-}
-#buy {
-  background-color: #f4f4f4;
-  background-image: url('https://atmedia.digital/wp-content/themes/mediaworld/assets/images/wave.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%
-}
-
-.buy__video video {
-  border: 2px solid #cd1719;
-  box-shadow: 0 3px 20px rgba(205,23,25,.6);
-  /* transform: scale(2.5); */
-  /* opacity: 0; */
-}
-#customizable video {
-  border: 2px solid #cd1719;
-  box-shadow: 0 4px 56px rgba(205,23,25,.3);
-}
-#customizable .swiper-pagination
-{
-  position: unset;
-  margin-top: 40px;
-  text-align:left;
-}
-#customizable .swiper-pagination-bullet-active{
-  width: 36px;
-}
-#customizable .swiper-pagination-bullet{
-  transition: all .3s ease-in-out;
-  -webkit-transition: all .3s ease-in-out;
-  -moz-transition: all .3s ease-in-out;
-  -ms-transition: all .3s ease-in-out;
-  -o-transition: all .3s ease-in-out;
-  background-color: #cd1719;
-}
-.test
-{
-  animation: videoScale2 1s normal forwards ease-in-out;
-  -webkit-animation: videoScale2 1s normal forwards ease-in-out;
-}
-@keyframes videoScale2 {
-  0% {
-      transform: scale(2.5)  ;
-      -webkit-transform: scale(2.5)  ;
-      -moz-transform: scale(2.5)  ;
-      -ms-transform: scale(2.5)  ;
-      -o-transform: scale(2.5)  ;
-      opacity: 0;
-}
-
-  100% {
-      transform: scale(1)  ;
-      -webkit-transform: scale(1)  ;
-      -moz-transform: scale(1)  ;
-      -ms-transform: scale(1)  ;
-      -o-transform: scale(1)  ;
-      opacity: 1;
-}
-}

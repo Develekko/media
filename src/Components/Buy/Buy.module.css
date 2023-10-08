@@ -1,0 +1,12 @@
+.buy {
+  background-color: #f4f4f4;
+  background-image: url("https://atmedia.digital/wp-content/themes/mediaworld/assets/images/wave.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+.buy__video {
+  border: 2px solid #cd1719;
+  box-shadow: 0 3px 20px rgba(205, 23, 25, 0.6);
+}
