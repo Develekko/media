@@ -6,6 +6,8 @@
 {
   box-sizing: border-box;
   user-select: none;
+  scrollbar-width: thin;
+  scrollbar-color: #000 #f4f4f4
 }
 ::selection
 {
@@ -19,4 +21,17 @@ html {
 body
 {
   font-family: 'Roboto', sans-serif!important;
+}
+*::-webkit-scrollbar {
+  width: 8px
+}
+
+*::-webkit-scrollbar-track {
+  background: #f4f4f4
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 20px;
+  border: 2px solid #f4f4f4
 }

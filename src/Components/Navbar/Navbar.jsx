@@ -3,10 +3,11 @@ import React from 'react'
 import styles from './Navbar.module.css'
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from "@nextui-org/react";
 import { Link } from 'react-scroll';
+import { useSelector } from 'react-redux';
 
 
 export default function NavbarComponent() {
-
+  let { isVideoLoaded } = useSelector(state => state.system)
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const menuItems = [
     { name: "what is @ahmed", url: "whatis" },
@@ -26,14 +27,14 @@ export default function NavbarComponent() {
       isBlurred={false}
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className={`bg-black backdrop-filter-none backdrop-blur-none transition-background duration-1000 animate__animated animate__slideInDown animate__delay-2s`}
+      className={`bg-black backdrop-filter-none backdrop-blur-none transition-background duration-1000 opacity-0 ${isVideoLoaded&& 'animate__animated animate__slideInDown opacity-100'} `}
     >
       <NavbarContent>
         <NavbarBrand>
-        <Link to="hero" smooth={true} duration={500}><p className="font-bold text-2xl cursor-pointer"><span className='text-red-700'>@ </span>ahmed</p></Link>
+        <Link to="hero" smooth={true} duration={500} offset={-50}><p className="font-bold text-2xl cursor-pointer"><span className='text-red-700'>@ </span>ahmed</p></Link>
         </NavbarBrand>
       </NavbarContent>
-      <NavbarContent className="hidden sm:flex gap-8" justify="end">
+      <NavbarContent className="hidden lg:flex gap-8" justify="end">
         <NavbarItem><Link to="" className="hover:text-red-700 transition-colors" href="https://www.lyconet.com/ie/mediabox">World map</Link></NavbarItem>
         <NavbarItem className='relative'><Link to="whatis" smooth={true} duration={500} spy={true} activeClass={`${styles.active} text-red-600 font-medium`} className={`${styles.navbar_link} cursor-pointer hover:text-red-700 transition-colors`}>what is @ahmed</Link></NavbarItem>
         <NavbarItem className='relative'><Link to="howitworks" smooth={true} duration={500} spy={true} activeClass={`${styles.active} text-red-600 font-medium`} className={`${styles.navbar_link} cursor-pointer hover:text-red-700 transition-colors`}>how it works</Link></NavbarItem>
@@ -42,7 +43,7 @@ export default function NavbarComponent() {
         <NavbarItem className='relative'><Link to="video" smooth={true} duration={500} spy={true} activeClass={`${styles.active} text-red-600 font-medium`} className={`${styles.navbar_link} cursor-pointer hover:text-red-700 transition-colors`}>video</Link></NavbarItem>
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden" justify="end">
+      <NavbarContent className="lg:hidden" justify="end">
         <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
       </NavbarContent>
 
