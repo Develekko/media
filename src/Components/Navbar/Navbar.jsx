@@ -27,7 +27,7 @@ export default function NavbarComponent() {
       isBlurred={false}
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className={`bg-black backdrop-filter-none backdrop-blur-none transition-background duration-1000 opacity-0 ${isVideoLoaded&& 'animate__animated animate__slideInDown opacity-100'} `}
+      className={`bg-black backdrop-filter-none backdrop-blur-none transition-background duration-1000 opacity-0 ${isVideoLoaded&& 'animate__animated animate__slideInDown animate__delay-1s opacity-100'} `}
     >
       <NavbarContent>
         <NavbarBrand>
