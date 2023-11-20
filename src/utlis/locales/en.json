@@ -1,0 +1,52 @@
+{
+  "navbar":{
+    "navbarItem_1":"World map",
+    "navbarItem_2":"what is @media",
+    "navbarItem_3":"how it works",
+    "navbarItem_4":"customizable",
+    "navbarItem_5":"business information",
+    "navbarItem_6":"video"
+  },
+  "hero":{
+    "desc":"A smart way to earn rewards for every advertisement you see while watching TV, your favourite film, TV show or while playing a videogame."
+  },
+  "whatis":{
+    "what":"What is @media",
+    "firstCaption":"All in",
+    "secondCaption":"one box",
+    "desc":"@media box is the first multi-media TV box designed for home entertainment where you can watch TV, films or TV shows from your favourite streaming providers and get paid. Thanks to our myWorld partnership you will get a commission in form of Cashback and additional benefits for every ad you see.",
+    "firstFooter":"About myWorld International",
+    "secondFooter":"The London-based myWorld International group operates the worldwide myWorld Benefit Program, which offers a wealth of attractive benefits for shoppers, retailers and service providers alike. Shoppers can enjoy Shopping Points and Cashback with every purchase from myWorld partners regardless of whether they shop online or in-store. In turn, partners benefit from efficient customer loyalty programmes, which help them increase their visibility and sales. More than 15 million customers and 150,000 partners in 55 markets already use the myWorld Benefit Program. More information on myworld.com."
+  },
+  "howitworks":{
+    "firstHeader":"How it works",
+    "secondHeader":"Connect, watch & get paid",
+    "firstTab":{
+      "label":"Plug and play",
+      "heading":"Easy to install",
+      "desc":"Connect your TV and device such as gaming console or streaming box to the @media box."
+    },
+    "secondTab":{
+      "label":"Choose your provider",
+      "heading":"Easy to stream",
+      "desc":"Select your streaming providers and you are ready to watch films, TV shows or play a videogame"
+    },
+    "thirdTab":{
+      "label":"Get Cashback",
+      "heading":"Easy to earn",
+      "desc":"You have the ability to set up your ad preferences, earn Cashback and additional benefits for watching the ads thanks to our myWorld partnership."
+    }
+  },
+  "buy":{
+    "heading_1":"Buy your product",
+    "heading_2":"with",
+    "heading_3":"one click.",
+    "desc":"If you're interested in the ad shown simply switch to split screen mode. In case, you would like to buy a product from the advert you see, simply press PURCHASE button on your remote control and press it again to confirm your purchase decision."
+  },
+  "customizable":{
+    "heading_1":"CUSTOMIZABLE",
+    "heading_2":"You can set up all ads completely according to your wishes.",
+    "swiperHeading":"You are in charge",
+    "swiperDesc":"Set up your ad preferences by choosing your interests and how often you would like to see the adverts. @media box will match the perfect ads for your needs!"
+  }
+}

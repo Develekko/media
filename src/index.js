@@ -5,6 +5,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "@fortawesome/fontawesome-svg-core";
 import "animate.css/animate.min.css";
 import "./index.css";
+import './utlis/i18n'
 import { Provider } from "react-redux";
 import store from "./Redux/store.js";
 import { NextUIProvider } from "@nextui-org/react";

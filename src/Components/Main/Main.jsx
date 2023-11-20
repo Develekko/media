@@ -9,6 +9,6 @@ export default function Main() {
   return <>
     <Navbar />
       <Outlet />
-    <div className={!isVideoLoaded&& 'w-full h-screen bg-black fixed top-0'}/>
+    <div className={!isVideoLoaded?'w-full h-screen bg-black fixed top-0':'hidden'}/>
   </>
 }

@@ -1,0 +1,52 @@
+{
+  "navbar":{
+    "navbarItem_1":"Weltkarte",
+    "navbarItem_2":"Was ist @media",
+    "navbarItem_3":"wie es funktioniert",
+    "navbarItem_4":"anpassbar",
+    "navbarItem_5":"Geschäftsinformationen",
+    "navbarItem_6":"video"
+  },
+  "hero":{
+    "desc":"Eine clevere Möglichkeit, Belohnungen für jede Werbung zu verdienen, die Sie sehen, während Sie fernsehen, Ihren Lieblingsfilm, Ihre Lieblingssendung oder ein Videospiel spielen."
+  },
+  "whatis":{
+    "what":"Was ist @media",
+    "firstCaption":"Alles drin",
+    "secondCaption":"eine Schachtel",
+    "desc":"@media box ist die erste Multimedia-TV-Box für Home-Entertainment, mit der Sie fernsehen, Filme oder Fernsehsendungen von Ihren bevorzugten Streaming-Anbietern ansehen und dafür bezahlt werden können. Dank unserer myWorld-Partnerschaft erhalten Sie für jede Anzeige, die Sie sehen, eine Provision in Form von Cashback und zusätzliche Vorteile.",
+    "firstFooter":"Über myWorld International",
+    "secondFooter":"Die in London ansässige myWorld International-Gruppe betreibt das weltweite myWorld Benefit-Programm, das eine Fülle attraktiver Vorteile für Käufer, Einzelhändler und Dienstleister bietet. Shopper können sich bei jedem Einkauf bei myWorld-Partnern über Shopping Points und Cashback freuen, unabhängig davon, ob sie online oder im Laden einkaufen. Partner wiederum profitieren von effizienten Kundenbindungsprogrammen, die ihnen helfen, ihre Sichtbarkeit und Umsätze zu steigern. Mehr als 15 Millionen Kunden und 150.000 Partner in 55 Märkten nutzen bereits das myWorld Benefit Programm. Weitere Informationen auf myworld.com."
+  },
+  "howitworks":{
+    "firstHeader":"Wie es funktioniert",
+    "secondHeader":"Vernetzen Sie sich, schauen Sie zu und werden Sie bezahlt",
+    "firstTab":{
+      "label":"Plug-and-Play",
+      "heading":"Einfach zu installieren",
+      "desc":"Verbinden Sie Ihren Fernseher und Ihr Gerät wie eine Spielekonsole oder eine Streaming-Box mit der @media-Box."
+    },
+    "secondTab":{
+      "label":"Wählen Sie Ihren Anbieter",
+      "heading":"Easy to stream",
+      "desc":"Einfach zu streamen"
+    },
+    "thirdTab":{
+      "label":"Holen Sie sich Cashback",
+      "heading":"Leicht zu verdienen",
+      "desc":"Dank unserer myWorld-Partnerschaft haben Sie die Möglichkeit, Ihre Anzeigenpräferenzen festzulegen, Cashback und zusätzliche Vorteile für das Ansehen der Anzeigen zu verdienen."
+    }
+  },
+  "buy":{
+    "heading_1":"Kaufen Sie Ihr Produkt",
+    "heading_2":"mit",
+    "heading_3":"ein Klick.",
+    "desc":"Wenn Sie an der angezeigten Anzeige interessiert sind, wechseln Sie einfach in den Splitscreen-Modus. Falls Sie ein Produkt aus der angezeigten Anzeige kaufen möchten, drücken Sie einfach die PURCHASE-Taste auf Ihrer Fernbedienung und drücken Sie sie erneut, um Ihre Kaufentscheidung zu bestätigen."
+  },
+  "customizable":{
+    "heading_1":"ANPASSBAR",
+    "heading_2":"Sie können alle Anzeigen komplett nach Ihren Wünschen einrichten.",
+    "swiperHeading":"Du bist in der Verantwortung",
+    "swiperDesc":"Richten Sie Ihre Anzeigenpräferenzen ein, indem Sie Ihre Interessen und die Häufigkeit, mit der Sie die Anzeigen sehen möchten, auswählen. @media box stellt die perfekten Anzeigen für Ihre Bedürfnisse zusammen!"
+  }
+}

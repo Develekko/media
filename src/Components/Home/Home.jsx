@@ -6,7 +6,6 @@ import WhatIs from '../WhatIs/WhatIs.jsx';
 import Buy from '../Buy/Buy.jsx';
 import Customizable from '../Customizable/Customizable.jsx';
 import Hero from '../Hero/Hero.jsx';
-
 export default function Home() {
   return <>
     <Hero />

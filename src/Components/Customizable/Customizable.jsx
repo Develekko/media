@@ -7,7 +7,9 @@ import 'swiper/css';
 import 'swiper/css/bundle'
 import { Element } from 'react-scroll';
 import styles from "./Customizable.module.css";
+import { useTranslation } from 'react-i18next';
 export default function Customizable() {
+  const { t } = useTranslation();
   return <>
     <Element name='customizable'>
       <motion.section id="customizable" className={styles.customizable}>
@@ -15,8 +17,8 @@ export default function Customizable() {
           <div className="grid grid-cols-12 mt-3">
             <div className="col-span-12 md:col-span-8 text-left z-0">
               <AnimationOnScroll animateIn="animate__fadeInUp" animateOut='animate__fadeOutDown'>
-                <p className="uppercase text-zinc-400 text-sm mb-5">CUSTOMIZABLE</p>
-                <h2 className="text-black text-3xl md:text-5xl">You can set up all ads completely according to your wishes.</h2>
+                <p className="uppercase text-zinc-400 text-sm mb-5">{t('customizable.heading_1')}</p>
+                <h2 className="text-black text-3xl md:text-5xl">{t('customizable.heading_2')}</h2>
               </AnimationOnScroll>
             </div>
           </div>
@@ -41,8 +43,8 @@ export default function Customizable() {
                 {[...Array(3)].map((_, index) => {
                   return <SwiperSlide key={index}>
                     <div className="text-left bg-white">
-                      <h4 className="text-black text-2xl mb-5">You are in charge</h4>
-                      <p className="text-zinc-500 text-base font-normal">Set up your ad preferences by choosing your interests and how often you would like to see the adverts. @ahmed box will match the perfect ads for your needs!</p>
+                      <h4 className="text-black text-2xl mb-5">{t('customizable.swiperHeading')}</h4>
+                      <p className="text-zinc-500 text-base font-normal">{t('customizable.swiperDesc')}</p>
                     </div>
                   </SwiperSlide>
                 })}

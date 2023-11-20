@@ -3,26 +3,28 @@ import { Tabs, Tab } from '@nextui-org/react';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import styles from './HowItWorks.module.css'
 import { Element } from 'react-scroll';
+import { useTranslation } from 'react-i18next';
 
 export default function HowItWorks() {
     const [selected, setSelected] = React.useState("Plug and play");
+    const { t } = useTranslation();
     const HowToWorkItems = [
         {
-            label: 'Plug and play',
-            heading: 'Easy to install',
-            desc: 'Connect your TV and device such as gaming console or streaming box to the @media box.',
+            label: t('howitworks.firstTab.label'),
+            heading: t('howitworks.firstTab.heading'),
+            desc: t('howitworks.firstTab.desc'),
             url: "https://res.cloudinary.com/dhlpnm4rn/video/upload/v1696189323/02_a_WEBSITE_LOOP_CONNECT_jjlgau.mp4",
         },
         {
-            label: 'Choose your provider',
-            heading: 'Easy to stream',
-            desc: 'Select your streaming providers and you are ready to watch films, TV shows or play a videogame',
+            label: t('howitworks.secondTab.label'),
+            heading: t('howitworks.secondTab.heading'),
+            desc: t('howitworks.secondTab.desc'),
             url: "https://res.cloudinary.com/dhlpnm4rn/video/upload/v1696189696/02_b_WEBSITE_LOOP_PROVIDER_glyuf8.mp4",
         },
         {
-            label: 'Get Cashback',
-            heading: 'Easy to earn',
-            desc: 'You have the ability to set up your ad preferences, earn Cashback and additional benefits for watching the ads thanks to our myWorld partnership.',
+            label: t('howitworks.thirdTab.label'),
+            heading: t('howitworks.thirdTab.heading'),
+            desc: t('howitworks.thirdTab.desc'),
             url: "https://res.cloudinary.com/dhlpnm4rn/video/upload/v1696189818/02_c_WEBSITE_LOOP_EARN_jipnx3.mp4",
         },
     ];
@@ -31,8 +33,8 @@ export default function HowItWorks() {
         <Element name="howitworks">
             <section className={`${styles.howitworks} py-36 text-black`}>
                 <div className='container m-auto  px-0 sm:px-10 text-center'>
-                    <p className="uppercase text-red-600 text-sm tracking-wider mb-3">How it works</p>
-                    <h2 className='text-2xl sm:text-5xl font-medium'>Connect, watch & get paid</h2>
+                    <p className="uppercase text-red-600 text-sm tracking-wider mb-3">{t('howitworks.firstHeader')}</p>
+                    <h2 className='text-2xl sm:text-5xl font-medium'>{t('howitworks.secondHeader')}</h2>
 
                     <div className="flex w-full flex-col mt-5">
                         <Tabs
@@ -67,7 +69,7 @@ export default function HowItWorks() {
                                                     </video>
                                                     {item.label !== 'Plug and play' && <div className="absolute w-full">
                                                         <div className={`${styles.howitworks__video__image} relative`}>
-                                                            <img loading="lazy" className="mx-auto" width={280} src="https://atmedia.digital/wp-content/themes/mediaworld/assets/images/Box_Shot_03-small.png" alt="@ ahmed box - TV Entertainment and Advertising" />
+                                                            <img loading="lazy" className="mx-auto" width={280} src="https://atmedia.digital/wp-content/themes/mediaworld/assets/images/Box_Shot_03-small.png" alt="@ media box - TV Entertainment and Advertising" />
                                                         </div>
                                                     </div>}
                                                 </AnimationOnScroll>

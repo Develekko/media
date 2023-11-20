@@ -9,7 +9,10 @@ import { Element } from 'react-scroll';
 import styles from './Hero.module.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { videoLoaded } from '../../Redux/slice/System.slice.js';
+import { useTranslation } from 'react-i18next';
+
 export default function Hero() {
+    const { t } = useTranslation();
     const { scrollYProgress } = useScroll();
     const dispatch = useDispatch()
     const HeroOpacitySection = useTransform(scrollYProgress, [0, 1], [1, 0]);
@@ -23,8 +26,8 @@ export default function Hero() {
                     <div className="flex-col justify-center items-center">
                         <AnimationOnScroll animateIn="animate__fadeIn" animateOut='animate__fadeOut'>
                             <div className="lg:w-[66%] mx-auto mb-[60px] text-center">
-                                <p className='text-[28px] md:text-[32px] lg:text-[46px] mb-7'><strong className="text-red-700">@</strong>ahmed</p>
-                                <p className='text-[18px] text-[#919191] mb-5'>A smart way to earn rewards for every advertisement you see while watching TV, your favourite film, TV show or while playing a videogame.</p>
+                                <p className='text-[28px] md:text-[32px] lg:text-[46px] mb-7'><strong className="text-red-700">@</strong>media</p>
+                                <p className='text-[18px] text-[#919191] mb-5'>{t('hero.desc')}</p>
                             </div>
                         </AnimationOnScroll>
                         <div className="lg:w-[66%] mx-auto">
@@ -32,7 +35,7 @@ export default function Hero() {
                                 <img loading="lazy" className="absolute top-0 right-14 translate-x-full -translate-y-28" src={DotSmall} alt="dot" />
                                 <img loading="lazy" className="absolute top-0 right-0 translate-x-full translate-y-10" src={DotBig} alt="dot" />
                                 <video width="100%" height="auto" muted autoPlay playsInline preload='none'
-                                    poster="anyimage.jpg" className={`${styles.hero_video} ${isVideoLoaded&&styles.hero_video__loaded}`}
+                                    poster="anyimage.jpg" className={`${styles.hero_video} ${isVideoLoaded?styles.hero_video__loaded:''}`}
                                     onLoadedData={() => dispatch(videoLoaded(true))} >
                                     {/* <source src="https://res.cloudinary.com/dhlpnm4rn/video/upload/v1696098491/01_WEBSITE_INTRO_r2fzqf.mp4" type="video/mp4" /> */}
                                     <source src={HeroIntroVideo} type="video/mp4" />
